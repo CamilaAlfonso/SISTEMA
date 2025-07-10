@@ -1,0 +1,37 @@
+<div class="mb-3">
+  <label>Filtrar por estado:</label>
+  <select class="form-select w-auto d-inline-block ms-2" [(ngModel)]="filter" (change)="onFilterChange(filter)">
+    <option value="">Todas</option>
+    <option value="pendiente">Pendiente</option>
+    <option value="en progreso">En progreso</option>
+    <option value="completada">Completada</option>
+  </select>
+</div>
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Título</th>
+      <th>Descripción</th>
+      <th>Estado</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let task of tasks">
+      <td>{{ task.title }}</td>
+      <td>{{ task.description }}</td>
+      <td>
+        <span [ngClass]="{
+          'badge bg-warning text-dark': task.status === 'pendiente',
+          'badge bg-info text-dark': task.status === 'en progreso',
+          'badge bg-success': task.status === 'completada'
+        }">{{ task.status }}</span>
+      </td>
+      <td>
+        <button class="btn btn-sm btn-primary me-2" [routerLink]="['/edit', task.id]">Editar</button>
+        <button class="btn btn-sm btn-danger" (click)="deleteTask(task.id!)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

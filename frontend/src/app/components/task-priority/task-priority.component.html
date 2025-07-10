@@ -1,0 +1,12 @@
+<form (ngSubmit)="sugerirPrioridad()" class="card card-body mb-3">
+  <div class="mb-3">
+    <label for="desc" class="form-label">Descripción de la tarea</label>
+    <input id="desc" class="form-control" [(ngModel)]="description" name="description" required>
+  </div>
+  <button class="btn btn-warning" type="submit" [disabled]="loading">
+    {{ loading ? 'Consultando...' : 'Sugerir prioridad (IA)' }}
+  </button>
+</form>
+<div *ngIf="sugerencia" class="alert alert-warning">
+  <strong>Sugerencia IA:</strong> {{ sugerencia }}
+</div>

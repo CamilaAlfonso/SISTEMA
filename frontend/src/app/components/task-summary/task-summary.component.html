@@ -1,0 +1,9 @@
+<div class="mb-3">
+  <button class="btn btn-info" (click)="generarResumen()" [disabled]="loading">
+    {{ loading ? 'Generando...' : 'Generar resumen de tareas pendientes (IA)' }}
+  </button>
+</div>
+<div *ngIf="resumen" class="alert alert-primary mt-2">
+  <strong>Resumen IA:</strong>
+  <p>{{ resumen }}</p>
+</div>

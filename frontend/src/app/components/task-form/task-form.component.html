@@ -1,0 +1,20 @@
+<form (ngSubmit)="saveTask()" class="card card-body">
+  <div class="mb-3">
+    <label for="title" class="form-label">Título</label>
+    <input id="title" class="form-control" [(ngModel)]="task.title" name="title" required>
+  </div>
+  <div class="mb-3">
+    <label for="description" class="form-label">Descripción</label>
+    <textarea id="description" class="form-control" [(ngModel)]="task.description" name="description"></textarea>
+  </div>
+  <div class="mb-3">
+    <label for="status" class="form-label">Estado</label>
+    <select id="status" class="form-select" [(ngModel)]="task.status" name="status">
+      <option value="pendiente">Pendiente</option>
+      <option value="en progreso">En progreso</option>
+      <option value="completada">Completada</option>
+    </select>
+  </div>
+  <button class="btn btn-success" type="submit">{{ isEdit ? 'Actualizar' : 'Crear' }} tarea</button>
+  <button class="btn btn-secondary ms-2" type="button" (click)="router.navigate(['/'])">Cancelar</button>
+</form>
