@@ -153,8 +153,7 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) par
 
 ## 👨‍💻 Autor
 
-Tu Nombre - [tu-email@ejemplo.com](mailto:tu-email@ejemplo.com)
+Tu Nombre - mariaalfonso8767@gmail.com
 
 ---
 
-⭐ **¡Dale una estrella al proyecto si te gustó!** 
